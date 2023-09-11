@@ -2,7 +2,7 @@ git init
 git status -s
 git add .
 git status -s
-git commit -m "第一次提交"
+git commit -m "碌脷脪禄麓脦脤谩陆禄"
 git remote add origin git@github.com:onlylove2023/quantumult.git
 git push -u origin master
 1t1t1t
@@ -10,3 +10,5 @@ ssh-keygen -t rsa -C "wanmingze2019@gmail.com"
 ssh -T git@github.com
 git config --global user.name "onlylove2023"
 git config --global user.email "wanmingze2019@gmail.com"
+git pull --rebase origin master
+git push -u origin master
