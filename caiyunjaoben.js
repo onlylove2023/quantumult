@@ -1,5 +1,5 @@
 /**
-彩云天气 v0.1 alpha
+彩云天气pro v0.1 alpha
 @author: Peng-YM
 更新地址：https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/caiyun.js
  *
@@ -68,7 +68,7 @@ if (typeof $request !== "undefined") {
     longitude: res[2],
   };
   if (!$.read("location")) {
-    $.notify("[彩云天气]", "", "🎉🎉🎉 获取定位成功。");
+    $.notify("[彩云天气pro]", "", "🎉🎉🎉 获取定位成功。");
   }
   if (display_location) {
     $.info(
@@ -95,7 +95,7 @@ if (typeof $request !== "undefined") {
     } else if (!$.read("location")) {
       // no location
       $.notify(
-        "[彩云天气]",
+        "[彩云天气pro]",
         "❌ 未找到定位",
         "🤖 您可能没有正确设置MITM，请检查重写是否成功。"
       );
@@ -106,14 +106,14 @@ if (typeof $request !== "undefined") {
     .catch((err) => {
       if (err instanceof ERR.TokenError)
         $.notify(
-          "[彩云天气]",
+          "[彩云天气pro]",
           err.message,
           "🤖 由于API Token具有时效性，请前往\nhttps://t.me/cool_scripts\n获取最新Token。",
           {
             "open-url": "https://t.me/cool_scripts",
           }
         );
-      else $.notify("[彩云天气]", "❌ 出现错误", JSON.stringify(err, Object.getOwnPropertyNames(err)));
+      else $.notify("[彩云天气pro]", "❌ 出现错误", JSON.stringify(err, Object.getOwnPropertyNames(err)));
     })
     .finally(() => $.done());
 }
@@ -154,7 +154,7 @@ async function query() {
   const weather = await $.http.get({
     url,
     headers: {
-      "User-Agent": "ColorfulCloudsPro/5.0.10 (iPhone; iOS 14.0; Scale/3.00)",
+      "User-Agent": "ColorfulCloudsPro/5.0.10 (iPhone; iOS 15.0; Scale/3.00)",
     },
   })
     .then((resp) => {
@@ -208,7 +208,7 @@ function weatherAlert() {
     data.content.forEach((alert) => {
       if (alerted.indexOf(alert.alertId) === -1) {
         $.notify(
-          `[彩云天气] ${address.city} ${address.district} ${address.street}`,
+          `[彩云天气pro] ${address.city} ${address.district} ${address.street}`,
           alert.title,
           alert.description
         );
